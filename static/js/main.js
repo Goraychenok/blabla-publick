@@ -5289,7 +5289,8 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "b-calculator__info-left" }, [
       _c("div", { staticClass: "b-calculator__info-text" }, [
-        _vm._v("Доставка: от 2 до 3 дней"),
+        _vm._v("Доставка:"),
+        _c("span", [_vm._v("от 2 до 3 дней")]),
       ]),
     ])
   },
@@ -5301,7 +5302,7 @@ var staticRenderFns = [
       _c(
         "a",
         {
-          staticClass: "b-btn b-btn_green",
+          staticClass: "b-btn b-btn_green b-btn_block",
           attrs: { href: "#callme_buy", "data-toggle": "modal" },
         },
         [_vm._v("Оставить заявку")]
