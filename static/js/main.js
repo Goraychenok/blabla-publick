@@ -253,13 +253,14 @@ __webpack_require__.r(__webpack_exports__);
     checkHeight: function checkHeight(height) {
       if (height !== '' && height !== null) {
         height = Number(height);
+        console.log(height);
 
-        if (height <= 210 && height > 0) {
-          return 210;
-        } else if (height > 210 && height < 250) {
-          return 210;
+        if (height <= 2.1 && height > 0) {
+          return 2.1;
+        } else if (height > 2.1 && height <= 2.5) {
+          return 2.5;
         } else {
-          return 'Максимальная высота 250м и указывается в числах';
+          return 'Максимальная высота 2.5м и указывается в числах';
         }
       }
 
