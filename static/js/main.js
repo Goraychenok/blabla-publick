@@ -109,54 +109,54 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      long: '',
-      weight: '',
-      cities: ['Тула', 'Новомосковск', 'Донской', 'Щёкино', 'Узловая', 'Киреевск', 'Ясногорск', 'Болохово', 'Калуга', 'Обнинск', 'Малоярославец', 'Балабаново', 'Жуков', 'Белоусово', 'Боровск', 'Кремёнки', 'Ермолино', 'Полотняный завод', 'Товарково', 'Детчино', 'Добрино', 'Серпухов', 'Пущино', 'Чехов', 'Протвино', 'Санкт -Петербург'],
+      long: "",
+      weight: "",
+      cities: ["Тула", "Новомосковск", "Донской", "Щёкино", "Узловая", "Киреевск", "Ясногорск", "Болохово", "Калуга", "Обнинск", "Малоярославец", "Балабаново", "Жуков", "Белоусово", "Боровск", "Кремёнки", "Ермолино", "Полотняный завод", "Товарково", "Детчино", "Добрино", "Серпухов", "Пущино", "Чехов", "Протвино", "Санкт -Петербург"],
       typeOfSize: 1,
-      longName: 'Метры',
+      longName: "Метры",
       typeLongInSearch: 0,
       filterData: [{
-        'id': 1,
-        'name': 'Откуда',
-        'code': 'from',
-        'type': 'select',
-        'value': 'Откуда',
-        'options': []
+        id: 1,
+        name: "Откуда",
+        code: "from",
+        type: "select",
+        value: "Откуда",
+        options: []
       }, {
-        'id': 2,
-        'name': 'Куда',
-        'code': 'to',
-        'type': 'select',
-        'value': 'Куда',
-        'options': []
+        id: 2,
+        name: "Куда",
+        code: "to",
+        type: "select",
+        value: "Куда",
+        options: []
       }, {
-        'id': 3,
-        'name': 'Длинна',
-        'code': 'long',
-        'type': 'select',
-        'value': 'Длинна',
-        'options': ['Метры по полу', 'Евро палеты (1,2 на 0,8)', 'Финские палеты (1,2 на 1)', 'Американский (1,2 на 1,2)']
+        id: 3,
+        name: "Длина",
+        code: "long",
+        type: "select",
+        value: "Длина",
+        options: ["Метры по полу", "Евро палеты (1,2 на 0,8)", "Финские палеты (1,2 на 1)", "Американский (1,2 на 1,2)"]
       }, {
-        'id': 4,
-        'name': 'Метры',
-        'code': 'meters',
-        'value': '',
-        'type': 'meters'
+        id: 4,
+        name: "Метры",
+        code: "meters",
+        value: "",
+        type: "meters"
       }, {
-        'id': 6,
-        'name': 'Высота',
-        'code': 'height',
-        'value': '',
-        'type': 'text'
+        id: 6,
+        name: "Высота",
+        code: "height",
+        value: "",
+        type: "text"
       }, {
-        'id': 7,
-        'name': 'Вес',
-        'code': 'weight',
-        'value': '',
-        'type': 'text'
+        id: 7,
+        name: "Вес",
+        code: "weight",
+        value: "",
+        type: "text"
       }],
       items: JSON.parse(window.api).items,
-      result: 'Введите все параметры'
+      result: "Введите все параметры"
     };
   },
   methods: {
@@ -167,7 +167,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     checkValue: function checkValue(arr) {
       for (var i = 0; i < arr.length; i++) {
-        if (arr[i] === '' || arr[i] === null) {
+        if (arr[i] === "" || arr[i] === null) {
           return false;
         }
       }
@@ -175,72 +175,72 @@ __webpack_require__.r(__webpack_exports__);
       return true;
     },
     checkLong: function checkLong(_long, meters) {
-      if ((_long !== '' || _long != null) && meters === '') {
+      if ((_long !== "" || _long != null) && meters === "") {
         switch (_long) {
-          case 'Метры по полу':
-            this.longName = 'Метры';
+          case "Метры по полу":
+            this.longName = "Метры";
             break;
 
-          case 'Евро палеты (1,2 на 0,8)':
-            this.longName = 'Шт';
+          case "Евро палеты (1,2 на 0,8)":
+            this.longName = "Шт";
             break;
 
-          case 'Финские палеты (1,2 на 1)':
-            this.longName = 'Шт';
+          case "Финские палеты (1,2 на 1)":
+            this.longName = "Шт";
             break;
 
-          case 'Американский (1,2 на 1,2)':
-            this.longName = 'Шт';
+          case "Американский (1,2 на 1,2)":
+            this.longName = "Шт";
             break;
         }
-      } else if ((_long !== '' || _long != null) && meters !== '') {
+      } else if ((_long !== "" || _long != null) && meters !== "") {
         switch (_long) {
-          case 'Метры по полу':
-            this.longName = 'Метры';
+          case "Метры по полу":
+            this.longName = "Метры";
             break;
 
-          case 'Евро палеты (1,2 на 0,8)':
-            this.longName = 'Шт';
+          case "Евро палеты (1,2 на 0,8)":
+            this.longName = "Шт";
             break;
 
-          case 'Финские палеты (1,2 на 1)':
-            this.longName = 'Шт';
+          case "Финские палеты (1,2 на 1)":
+            this.longName = "Шт";
             break;
 
-          case 'Американский (1,2 на 1,2)':
-            this.longName = 'Шт';
+          case "Американский (1,2 на 1,2)":
+            this.longName = "Шт";
         }
 
         var met = Number(meters);
 
         switch (_long) {
-          case 'Метры по полу':
-            if (met === 0 || met > 5 || met < 0) {
-              return 'Длинна от 4,2 до 5 метров';
+          case "Метры по полу":
+            if (met <= 0 || met > 6.2) {
+              return "Длина от 4,2 до 6.2 метров";
             }
 
             this.typeLongInSearch = 1;
             break;
 
-          case 'Евро палеты (1,2 на 0,8)':
+          case "Евро палеты (1,2 на 0,8)":
             if (met === 0 || met > 4 || met < 0) {
-              return 'Колличество палет от 1 до 4';
+              return "Колличество палет от 1 до 4";
             }
 
             this.typeLongInSearch = 2;
             break;
 
-          case 'Финские палеты (1,2 на 1)':
+          case "Финские палеты (1,2 на 1)":
             if (met === 0 || met > 2 || met < 0) {
-              return 'Колличество палет от 1 до 2';
+              return "Колличество палет от 1 до 2";
             }
 
             this.typeLongInSearch = 3;
             break;
 
-          case 'Американский (1,2 на 1,2)':
+          case "Американский (1,2 на 1,2)":
             if (met === 0 || met > 2 || met < 0) {
-              return 'Колличество палет от 1 до 2';
+              return "Колличество палет от 1 до 2";
             }
 
             this.typeLongInSearch = 4;
@@ -251,49 +251,26 @@ __webpack_require__.r(__webpack_exports__);
       return false;
     },
     checkHeight: function checkHeight(height) {
-      if (height !== '' && height !== null) {
+      if (height !== "" && height !== null) {
         height = Number(height);
-        console.log(height);
 
-        if (height <= 2.1 && height > 0) {
-          return 2.1;
-        } else if (height > 2.1 && height <= 2.5) {
-          return 2.5;
+        if (!height <= 0 && height <= 2.5) {
+          return height;
         } else {
-          return 'Максимальная высота 2.5м и указывается в числах';
+          return "Максимальная высота 2.5м и указывается в числах";
         }
       }
 
       return false;
     },
     checkWeight: function checkWeight(weight) {
-      if (weight !== '' && weight !== null) {
+      if (weight !== "" && weight !== null) {
         weight = Number(weight);
 
-        if (weight < 500 && weight > 0) {
-          return 500;
-        } else if (weight >= 500 && weight < 600) {
-          return 600;
-        } else if (weight >= 600 && weight < 700) {
-          return 700;
-        } else if (weight >= 700 && weight < 700) {
-          return 800;
-        } else if (weight >= 800 && weight < 900) {
-          return 900;
-        } else if (weight >= 900 && weight < 1000) {
-          return 1000;
-        } else if (weight >= 1000 && weight < 1100) {
-          return 1100;
-        } else if (weight >= 1100 && weight < 1200) {
-          return 1200;
-        } else if (weight >= 1200 && weight < 1300) {
-          return 1300;
-        } else if (weight >= 1300 && weight < 1400) {
-          return 1400;
-        } else if (weight >= 1400 && weight < 1500) {
-          return 1500;
+        if (weight <= 5000 && !weight <= 0) {
+          return weight;
         } else {
-          return 'Максимальный груз 1500кг';
+          return "Максимальный груз 5000кг";
         }
       }
 
@@ -309,49 +286,45 @@ __webpack_require__.r(__webpack_exports__);
       return true;
     },
     checkMeters: function checkMeters(_long2) {
-      if (_long2 === 0 || _long2 < 0 || _long2 === '') {
-        return 'Длинна должна быть больше 0 и больше 5';
-      } else if (_long2 <= 4.2) {
-        return 4.2;
-      } else if (_long2 > 4.2 && _long2 <= 5) {
-        return 5;
+      if (_long2 <= 0 || _long2 === "") {
+        return "Длина должна быть больше 0 и меньше 6.2";
+      } else {
+        return Number(_long2);
       }
-
-      return false;
     },
     priceFormatter: function priceFormatter(v) {
       //добавляет пробелы в цену
       v = Math.round(v);
-      v = v + '';
-      v = v.split('').reverse().map(function (item, i) {
-        return i % 3 == 0 ? item + ' ' : item;
+      v = v + "";
+      v = v.split("").reverse().map(function (item, i) {
+        return i % 3 == 0 ? item + " " : item;
       });
-      v = v.reverse().join('');
+      v = v.reverse().join("");
       return v;
     },
     checkCity: function checkCity(city) {
       switch (city) {
-        case 'Новомосковск':
+        case "Новомосковск":
           return 3000;
           break;
 
-        case 'Донской':
+        case "Донской":
           return 3000;
           break;
 
-        case 'Щёкино':
+        case "Щёкино":
           return 1000;
           break;
 
-        case 'Узловая':
+        case "Узловая":
           return 2500;
           break;
 
-        case 'Киреевск':
+        case "Киреевск":
           return 2000;
           break;
 
-        case 'Болохово':
+        case "Болохово":
           return 1000;
           break;
       }
@@ -361,15 +334,15 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     getCost: function getCost() {
-      var cityFirst = this.getFilterValueByCode('from');
-      var citySecond = this.getFilterValueByCode('to');
-      var typeLong = this.getFilterValueByCode('long');
-      var meters = this.getFilterValueByCode('meters');
-      var weight = this.getFilterValueByCode('weight');
-      var height = this.getFilterValueByCode('height');
+      var cityFirst = this.getFilterValueByCode("from");
+      var citySecond = this.getFilterValueByCode("to");
+      var typeLong = this.getFilterValueByCode("long");
+      var meters = this.getFilterValueByCode("meters");
+      var weight = this.getFilterValueByCode("weight");
+      var height = this.getFilterValueByCode("height");
 
       if (cityFirst === citySecond) {
-        return this.result = 'Выберите два разных пункта';
+        return this.result = "Выберите два разных пункта";
       }
 
       if (this.checkLong(typeLong, meters)) {
@@ -379,7 +352,7 @@ __webpack_require__.r(__webpack_exports__);
       if (this.checkHeight(height)) {
         height = this.checkHeight(height);
 
-        if (typeof height != 'number') {
+        if (typeof height != "number") {
           return height;
         }
       }
@@ -387,7 +360,7 @@ __webpack_require__.r(__webpack_exports__);
       if (this.checkWeight(weight)) {
         weight = this.checkWeight(weight);
 
-        if (typeof weight != 'number') {
+        if (typeof weight != "number") {
           return weight;
         }
       }
@@ -400,7 +373,7 @@ __webpack_require__.r(__webpack_exports__);
         if (this.checkMeters(meters)) {
           meters = this.checkMeters(meters);
 
-          if (typeof meters != 'number') {
+          if (typeof meters != "number") {
             return meters;
           }
         }
@@ -411,25 +384,25 @@ __webpack_require__.r(__webpack_exports__);
       switch (this.typeLongInSearch) {
         case 1:
           price = this.items.find(function (n) {
-            return n.metr == meters && n.weight == weight && n.height == height;
+            return n.metr >= meters && n.weight >= weight && n.height >= height;
           });
           break;
 
         case 2:
           price = this.items.find(function (n) {
-            return n.evro == meters && n.weight == weight && n.height == height;
+            return n.evro >= meters && n.weight >= weight && n.height >= height;
           });
           break;
 
         case 3:
           price = this.items.find(function (n) {
-            return n.fin == meters && n.weight == weight && n.height == height;
+            return n.fin >= meters && n.weight >= weight && n.height >= height;
           });
           break;
 
         case 4:
           price = this.items.find(function (n) {
-            return n.amerika == meters && n.weight == weight && n.height == height;
+            return n.amerika >= meters && n.weight >= weight && n.height >= height;
           });
           break;
       }
@@ -441,16 +414,69 @@ __webpack_require__.r(__webpack_exports__);
           finalCost = finalCost + this.checkCity(citySecond);
         }
 
+        if (this.checkCity(cityFirst)) {
+          finalCost = finalCost + this.checkCity(cityFirst);
+        }
+
         return this.result = "\u0421\u0442\u043E\u043C\u043E\u0441\u0442\u044C <span>".concat(this.priceFormatter(finalCost), "</span> \u20BD");
       } else {
-        return this.result = 'К сожалению по вашим параметрам ничего не найдено';
+        return this.result = "К сожалению по вашим параметрам ничего не найдено";
+      }
+    },
+    getCitiesFirst: function getCitiesFirst() {
+      var firstCity = this.getFilterValueByCode("from");
+      var secondCity = this.getFilterValueByCode("to");
+
+      if (secondCity !== "Куда" && firstCity === "Откуда") {
+        var newFirstCityArr = this.cities;
+        var indexCity = newFirstCityArr.indexOf("Санкт-Петербург");
+
+        if (secondCity === "Санкт-Петербург") {
+          return newFirstCityArr = newFirstCityArr[indexCity];
+        } else {
+          return newFirstCityArr = newFirstCityArr.splice(indexCity, 1);
+        }
+      } else {
+        return this.cities;
+      }
+    },
+    getCitiesSecond: function getCitiesSecond() {
+      var firstCity = this.getFilterValueByCode("from");
+      var secondCity = this.getFilterValueByCode("to");
+
+      if (firstCity !== "Откуда" && secondCity === "Куда") {
+        var newFirstCityArr = this.cities;
+        var indexCity = newFirstCityArr.indexOf("Санкт-Петербург");
+
+        if (firstCity === "Санкт-Петербург") {
+          return newFirstCityArr = newFirstCityArr[indexCity];
+        } else {
+          return newFirstCityArr = newFirstCityArr.splice(indexCity, 1);
+        }
+      } else {
+        return this.cities;
+      }
+    },
+    getFilteredData: {
+      set: function set(v) {
+        this.filterData = v;
+      },
+      get: function get() {
+        var _this = this;
+
+        return this.filterData.map(function (n) {
+          if (n.name === 'Откуда') {
+            n.options = _this.getCitiesFirst;
+          } else if (n.name === 'Куда') {
+            n.options = _this.getCitiesSecond;
+          }
+
+          return n;
+        });
       }
     }
   },
-  mounted: function mounted() {
-    this.filterData[0].options = this.cities;
-    this.filterData[1].options = this.cities;
-  },
+  mounted: function mounted() {},
   filters: {}
 });
 
@@ -5181,7 +5207,7 @@ var render = function () {
         _c(
           "div",
           { staticClass: "b-calculator__tabs" },
-          _vm._l(_vm.filterData, function (item) {
+          _vm._l(_vm.getFilteredData, function (item) {
             return _c(
               "div",
               { staticClass: "b-calculator__tab" },
@@ -5279,6 +5305,7 @@ var render = function () {
             _vm._m(1),
           ]),
         ]),
+        _vm._m(2),
       ]),
     ]),
   ])
@@ -5304,7 +5331,22 @@ var staticRenderFns = [
         "a",
         {
           staticClass: "b-btn b-btn_green b-btn_block",
-          attrs: { href: "#callme_buy", "data-toggle": "modal" },
+          attrs: { href: "#callme", "data-toggle": "modal" },
+        },
+        [_vm._v("Оставить заявку")]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "b-calculator__mobile-btn" }, [
+      _c(
+        "a",
+        {
+          staticClass: "b-btn b-btn_green b-btn_block",
+          attrs: { href: "#callme", "data-toggle": "modal" },
         },
         [_vm._v("Оставить заявку")]
       ),
