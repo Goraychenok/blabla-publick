@@ -223,8 +223,8 @@ __webpack_require__.r(__webpack_exports__);
             break;
 
           case "Евро палеты (1,2 на 0,8)":
-            if (met === 0 || met > 12 || met < 0) {
-              return "Колличество палет от 1 до 12";
+            if (met === 0 || met > 15 || met < 0) {
+              return "Колличество палет от 1 до 15";
             }
 
             this.typeLongInSearch = 2;
