@@ -109,9 +109,91 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      cityState: "",
       long: "",
       weight: "",
-      cities: ["Тула", "Новомосковск", "Донской", "Щёкино", "Узловая", "Киреевск", "Ясногорск", "Болохово", "Калуга", "Обнинск", "Малоярославец", "Балабаново", "Жуков", "Белоусово", "Боровск", "Кремёнки", "Ермолино", "Полотняный завод", "Товарково", "Детчино", "Добрино", "Серпухов", "Пущино", "Чехов", "Протвино", "Санкт -Петербург"],
+      cities: [{
+        name: "Тула",
+        location: 1
+      }, {
+        name: "Новомосковск",
+        location: 1
+      }, {
+        name: "Донской",
+        location: 1
+      }, {
+        name: "Щёкино",
+        location: 1
+      }, {
+        name: "Узловая",
+        location: 1
+      }, {
+        name: "Киреевск",
+        location: 1
+      }, {
+        name: "Ясногорск",
+        location: 1
+      }, {
+        name: "Болохово",
+        location: 1
+      }, {
+        name: "Калуга",
+        location: 1
+      }, {
+        name: "Обнинск",
+        location: 1
+      }, {
+        name: "Малоярославец",
+        location: 1
+      }, {
+        name: "Балабаново",
+        location: 1
+      }, {
+        name: "Жуков",
+        location: 1
+      }, {
+        name: "Белоусово",
+        location: 1
+      }, {
+        name: "Боровск",
+        location: 1
+      }, {
+        name: "Кремёнки",
+        location: 1
+      }, {
+        name: "Ермолино",
+        location: 1
+      }, {
+        name: "Полотняный завод",
+        location: 1
+      }, {
+        name: "Товарково",
+        location: 1
+      }, {
+        name: "Детчино",
+        location: 1
+      }, {
+        name: "Добрино",
+        location: 1
+      }, {
+        name: "Серпухов",
+        location: 1
+      }, {
+        name: "Пущино",
+        location: 1
+      }, {
+        name: "Чехов",
+        location: 1
+      }, {
+        name: "Протвино",
+        location: 1
+      }, {
+        name: "СПБ (КАД)",
+        location: 2
+      }, {
+        name: "СПБ (КАД+10 км.)",
+        location: 2
+      }],
       typeOfSize: 1,
       longName: "Метры",
       typeLongInSearch: 0,
@@ -426,35 +508,49 @@ __webpack_require__.r(__webpack_exports__);
     getCitiesFirst: function getCitiesFirst() {
       var firstCity = this.getFilterValueByCode("from");
       var secondCity = this.getFilterValueByCode("to");
+      var elem = this.cities.filter(function (n) {
+        return n.name === secondCity;
+      });
 
-      if (secondCity !== "Куда" && firstCity === "Откуда") {
-        var newFirstCityArr = this.cities;
-        var indexCity = newFirstCityArr.indexOf("Санкт-Петербург");
+      if (secondCity !== "Куда" && firstCity === "Откуда" || this.cityState === 1) {
+        var _elem = this.cities.filter(function (n) {
+          return n.name === secondCity;
+        });
 
-        if (secondCity === "Санкт-Петербург") {
-          return newFirstCityArr = newFirstCityArr[indexCity];
-        } else {
-          return newFirstCityArr = newFirstCityArr.splice(indexCity, 1);
-        }
+        var location = _elem.location;
+        var resultArr = this.cities.filter(function (n) {
+          return n.location !== location;
+        });
+        this.cityState = 1;
+        return resultArr.map(function (n) {
+          return n.name;
+        });
       } else {
-        return this.cities;
+        return this.cities.map(function (n) {
+          return n.name;
+        });
       }
     },
     getCitiesSecond: function getCitiesSecond() {
       var firstCity = this.getFilterValueByCode("from");
       var secondCity = this.getFilterValueByCode("to");
 
-      if (firstCity !== "Откуда" && secondCity === "Куда") {
-        var newFirstCityArr = this.cities;
-        var indexCity = newFirstCityArr.indexOf("Санкт-Петербург");
-
-        if (firstCity === "Санкт-Петербург") {
-          return newFirstCityArr = newFirstCityArr[indexCity];
-        } else {
-          return newFirstCityArr = newFirstCityArr.splice(indexCity, 1);
-        }
+      if (firstCity !== "Откуда" && secondCity === "Куда" || this.cityState === 2) {
+        var elem = this.cities.find(function (n) {
+          return n.name === firstCity;
+        });
+        var location = elem.location;
+        var resultArr = this.cities.filter(function (n) {
+          return n.location !== location;
+        });
+        this.cityState = 2;
+        return resultArr.map(function (n) {
+          return n.name;
+        });
       } else {
-        return this.cities;
+        return this.cities.map(function (n) {
+          return n.name;
+        });
       }
     },
     getFilteredData: {
@@ -465,9 +561,9 @@ __webpack_require__.r(__webpack_exports__);
         var _this = this;
 
         return this.filterData.map(function (n) {
-          if (n.name === 'Откуда') {
+          if (n.name === "Откуда") {
             n.options = _this.getCitiesFirst;
-          } else if (n.name === 'Куда') {
+          } else if (n.name === "Куда") {
             n.options = _this.getCitiesSecond;
           }
 
